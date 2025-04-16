@@ -6,8 +6,8 @@ import AcademicSemester from "../pages/admin/academicManagement/AcademicSemester
 import { CreateAcademicDepartment } from "../pages/admin/academicManagement/CreateAcademicDepartment";
 import { CreateAcademicFaculty } from "../pages/admin/academicManagement/CreateAcademicFaculty";
 import { CreateAcademicSemester } from "../pages/admin/academicManagement/CreateAcademicSemester";
-import CreateAdmin from "../pages/admin/userManagement/CreateAdmin";
-import CreateFaculty from "../pages/admin/userManagement/CreateFaculty";
+import { CreateAdmin } from "../pages/admin/userManagement/CreateAdmin";
+import { CreateFaculty } from "../pages/admin/userManagement/CreateFaculty";
 import { CreateStudent } from "../pages/admin/userManagement/CreateStudent";
 import { StudentData } from "../pages/admin/userManagement/StudentData";
 import { StudentDetails } from "../pages/admin/userManagement/StudentDetails";
