@@ -33,6 +33,7 @@ export const PHSelectWithWatch = ({
   return (
     <Controller
       name={name}
+      //   control={control}
       render={({ field, fieldState: { error } }) => (
         <Form.Item label={label}>
           <Select

@@ -21,8 +21,10 @@ export default function Login() {
   // });
 
   const defaultValues = {
-    id: "A-0002",
-    password: "admin123",
+    id: "2025010001",
+    password: "student123",
+    // id: "A-0002",
+    // password: "admin123",
   };
 
   //Mutation use korle must unwind korte hobe
