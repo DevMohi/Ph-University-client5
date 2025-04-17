@@ -1,12 +1,15 @@
 import { Controller, FieldValues, SubmitHandler } from "react-hook-form";
-import { useAddFacultyMutation } from "../../../redux/features/admin/userManagement.api";
+
 import { Button, Col, Divider, Form, Input, Row } from "antd";
 import { PHForm } from "../../../components/form/PHForm";
 import { PHInput } from "../../../components/form/PHInput";
 import { PHSelect } from "../../../components/form/PHSelect";
 import { PHDatePicker } from "../../../components/form/PHDatePicker";
 import { bloodGroupOptions, genderOptions } from "../../../constants/global";
-import { useGetAcademicDepartmentsQuery } from "../../../redux/features/admin/academicManagement.api";
+import {
+  useAddAcademicFacultyMutation,
+  useGetAcademicDepartmentsQuery,
+} from "../../../redux/features/admin/academicManagement.api";
 
 const facultyDefaultValues = {
   designation: "Lecturer Pro",
@@ -24,7 +27,7 @@ const facultyDefaultValues = {
 };
 
 export const CreateFaculty = () => {
-  const [addFaculty, { data, error }] = useAddFacultyMutation();
+  const [addFaculty, { data, error }] = useAddAcademicFacultyMutation();
   const { data: dData, isLoading: dIsLoading } =
     useGetAcademicDepartmentsQuery(undefined);
 

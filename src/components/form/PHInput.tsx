@@ -5,16 +5,23 @@ type TInputProps = {
   type: string;
   name: string;
   label?: string;
+  disabled?: boolean;
 };
 
-export const PHInput = ({ type, name, label }: TInputProps) => {
+export const PHInput = ({ type, name, label, disabled }: TInputProps) => {
   return (
     <div>
       <Controller
         name={name}
         render={({ field, fieldState: { error } }) => (
           <Form.Item label={label}>
-            <Input {...field} type={type} id={name} size="large"></Input>
+            <Input
+              {...field}
+              type={type}
+              id={name}
+              size="large"
+              disabled={disabled}
+            ></Input>
             {error && <small style={{ color: "red" }}>{error.message}</small>}
           </Form.Item>
         )}

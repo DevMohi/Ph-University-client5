@@ -7,6 +7,7 @@ import { CreateAcademicDepartment } from "../pages/admin/academicManagement/Crea
 import { CreateAcademicFaculty } from "../pages/admin/academicManagement/CreateAcademicFaculty";
 import { CreateAcademicSemester } from "../pages/admin/academicManagement/CreateAcademicSemester";
 import { Courses } from "../pages/admin/courseManagement/Courses";
+
 import { CreateCourse } from "../pages/admin/courseManagement/CreateCourse";
 import { OfferCourse } from "../pages/admin/courseManagement/OfferCourse";
 import RegisteredSemesters from "../pages/admin/courseManagement/RegisteredSemesters";
