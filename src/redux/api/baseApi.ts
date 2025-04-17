@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   BaseQueryApi,
   BaseQueryFn,
@@ -34,6 +35,9 @@ const baseQueryWithRefreshToken: BaseQueryFn<
   if (result?.error?.status === 404) {
     toast.error(result?.error?.data?.message);
   }
+  if (result?.error?.status === 409) {
+    toast.error(result?.error?.data?.message);
+  }
 
   if (result?.error?.status === 401) {
     //Send refresh token
@@ -43,6 +47,7 @@ const baseQueryWithRefreshToken: BaseQueryFn<
       credentials: "include",
     });
     const data = await res.json();
+    console.log(data);
     if (data?.data?.accessToken) {
       console.log(data);
       const user = (api.getState() as RootState).auth.user;
@@ -65,6 +70,6 @@ const baseQueryWithRefreshToken: BaseQueryFn<
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: baseQueryWithRefreshToken,
-  tagTypes: ["semester", "courses"],
+  tagTypes: ["semester", "courses", "offeredCourse"],
   endpoints: () => ({}),
 });

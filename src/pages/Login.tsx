@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Button, Row } from "antd";
 import { FieldValues } from "react-hook-form";
 import { useLoginMutation } from "../redux/features/auth/authApi";
@@ -23,15 +24,15 @@ export default function Login() {
   const defaultValues = {
     id: "2025010001",
     password: "student123",
-    // id: "A-0002",
-    // password: "admin123",
+    // id: "A-0001",
+    // password: "admin",
   };
 
   //Mutation use korle must unwind korte hobe
   const [login] = useLoginMutation(); //ekta array return korbe
 
   const onSubmit = async (data: FieldValues) => {
-    console.log(data);
+    // console.log(data);
     const toastId = toast.loading("Logging in");
 
     try {
@@ -41,10 +42,17 @@ export default function Login() {
       };
 
       const res = await login(userInfo).unwrap();
+
       const user = verifyToken(res.data.accessToken) as TUser;
       dispatch(setUser({ user: user, token: res.data.accessToken }));
       toast.success("logged in", { id: toastId, duration: 2000 });
       navigate(`/${user.role}/dashboard`);
+
+      // if (res.data.needsPasswordChange) {
+      //   navigate("/change-password");
+      // } else {
+      //   navigate(`/${user.role}/dashboard`);
+      // }
     } catch (err) {
       toast.error("Something else went wrong", { id: toastId, duration: 2000 });
     }

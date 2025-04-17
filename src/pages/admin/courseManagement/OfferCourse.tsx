@@ -58,15 +58,19 @@ export const OfferCourse = () => {
     })
   );
 
-  const courseOptions = coursesData?.data?.map((item) => ({
-    value: item._id,
-    label: item.title,
-  }));
+  const courseOptions = coursesData?.data?.map(
+    (item: { _id: any; title: any }) => ({
+      value: item._id,
+      label: item.title,
+    })
+  );
 
-  const facultiesOptions = facultiesData?.data?.faculties?.map((item) => ({
-    value: item._id,
-    label: item.fullName,
-  }));
+  const facultiesOptions = facultiesData?.data?.faculties?.map(
+    (item: { _id: any; fullName: any }) => ({
+      value: item._id,
+      label: item.fullName,
+    })
+  );
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const offeredCourseData = {
